@@ -31,7 +31,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Solution URL]()
+- Solution URL: [Solution URL](https://www.frontendmentor.io/solutions/responsive-and-interactive-bookmark-landing-page-BSdceArJjm)
 - Live Site URL: [Live Site URL](https://bookmark-landing-page-master-six.vercel.app/)
 
 ### Built with
