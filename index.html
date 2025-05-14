@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Bookmark landing page</title>
+
+    <!--Conect the Tailwind CSS by CDN link-->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!--The animations file-->
+    <link rel="stylesheet" href="animations.css" />
+  </head>
+
+  <body class="flex flex-col items-center w-[100vw] font-[Rubik, font-serif]">
+    <header
+      class="w-[100vw] lg:flex lg:flex-col lg:gap-25 lg:pt-10 lg:w-[80vw] lg:h-[700px]"
+    >
+      <nav class="hidden lg:flex justify-between items-center">
+        <img
+          src="/images/logo-bookmark.svg"
+          alt="Bookmark Logo Image"
+          class="w-[220px]"
+        />
+        <div class="flex gap-10 items-center">
+          <a
+            href="#"
+            class="uppercase font-normal tracking-[2px] text-[15px] hover:text-red-400"
+            >Features</a
+          >
+          <a
+            href="#"
+            class="uppercase font-normal tracking-[2px] text-[15px] hover:text-red-400"
+            >Pricing</a
+          >
+          <a
+            href="#"
+            class="uppercase font-normal tracking-[2px] text-[15px] hover:text-red-400"
+            >Contact</a
+          >
+          <button
+            class="uppercase font-normal tracking-[2px] bg-red-400 pt-2 pb-2 pr-6 pl-6 text-[15px] cursor-pointer text-black hover:text-red-400 hover:bg-white hover:border-red-400 hover:border-2 shadow-xl rounded-[6px]"
+          >
+            Login
+          </button>
+        </div>
+      </nav>
+
+      <!--Mobile Menu-->
+      <div
+        class="w-[100vw] h-[100vh] bg-blue-950 opacity-90 z-20 fixed lg:hidden flex-col hidden"
+        id="mobileNav"
+      >
+        <div class="flex justify-between gap-18 pt-9 pb-5 pl-10 pr-12">
+          <img src="/images/logo-bookmark.svg" alt="Logo Bookmark" />
+          <button class="bg-transparent border-0" id="closeBtn">
+            <img
+              src="/images/icon-close.svg"
+              alt="button to close the mobnav"
+            />
+          </button>
+          <p
+            class="text-white text-[18px] uppercase absolute translate-x-[36px] tracking-[2px]"
+          >
+            Bookmark
+          </p>
+        </div>
+        <div class="flex flex-col items-center mt-5 gap-4">
+          <a
+            href="#"
+            class="text-white text-[20px] uppercase tracking-[4px] border-t-2 border-white w-[80vw] text-center pt-4"
+            >Features</a
+          >
+          <a
+            href="#"
+            class="text-white text-[20px] uppercase tracking-[4px] border-t-2 border-white w-[80vw] text-center pt-4"
+            >Pricing</a
+          >
+          <a
+            href="#"
+            class="text-white text-[20px] uppercase tracking-[4px] border-t-2 border-b-2 border-white w-[80vw] text-center pt-4 pb-4"
+            >Contact</a
+          >
+          <button
+            class="text-white text-[20px] uppercase tracking-[4px] border-2 border-white mt-4 w-[80vw] pt-2 pb-2 font-semibold rounded-[5px]"
+          >
+            Login
+          </button>
+        </div>
+        <div class="flex gap-6 justify-center mt-40">
+          <a href="#">
+            <img src="/images/icon-facebook.svg" alt="Facebook logo" />
+          </a>
+          <a href="#">
+            <img src="/images/icon-twitter.svg" alt="Twitter logo" />
+          </a>
+        </div>
+      </div>
+
+      <nav class="flex justify-between pr-12 pl-12 pt-9 pb-5 lg:hidden">
+        <img src="/images/logo-bookmark.svg" alt="Bookmark Logo Image" />
+        <button class="border-0 bg-transparent" id="openBtn">
+          <img
+            src="/images/icon-hamburger.svg"
+            alt="Open Menu button for mobile devices"
+          />
+        </button>
+      </nav>
+
+      <main class="hidden lg:flex lg:justify-between lg:w-[83vw]">
+        <div class="flex flex-col gap-7 mt-[50px] w-[35vw]">
+          <h1 class="text-[2.9rem] font-bold leading-[55px] text-blue-950">
+            A Simple Bookmark Manager
+          </h1>
+          <p class="text-[18px] text-gray-500 font-normal">
+            A clean and simple interface to organize your favourite websites.
+            Open a new browser tab and see your sites load instantly. Try it for
+            free.
+          </p>
+
+          <div class="flex gap-5">
+            <button
+              class="pt-3 pb-3 pr-6 pl-6 bg-blue-600 text-white shadow-xl text-[16px] rounded-[6px] font-medium cursor-pointer hover:bg-white hover:text-blue-600 hover:border-2 hover:border-blue-600"
+            >
+              Get it on Chrome
+            </button>
+            <button
+              class="pt-3 pb-3 pr-6 pl-6 bg-gray-50 text-gray-600 shadow-xl text-[16px] rounded-[6px] font-medium cursor-pointer hover:bg-white hover:text-gray-600 hover:border-2 hover:border-gray-600"
+            >
+              Get it on Firefox
+            </button>
+          </div>
+        </div>
+        <img
+          src="/images/illustration-hero.svg"
+          alt="Ilustration Main Section"
+          class="z-10"
+        />
+      </main>
+      <div
+        class="w-[38vw] h-[40vh] rounded-l-[120px] bg-blue-600 absolute translate-x-[745px] translate-y-[280px] overflow-hidden"
+        id="illustration-block1"
+      ></div>
+
+      <!--Mobile version main-->
+      <main class="flex flex-col w-[100vw] h-[fit-content] lg:hidden">
+        <img
+          src="/images/illustration-hero.svg"
+          alt="Ilustration Main Section"
+          class="z-10"
+        />
+        <div class="flex flex-col gap-7 mb-[120px] w-[100vw] text-center pt-15">
+          <h1 class="text-[2.2rem] font-bold leading-[50px] text-blue-950">
+            A Simple Bookmark Manager
+          </h1>
+          <p class="text-[18px] text-gray-500 font-normal pr-7 pl-7">
+            A clean and simple interface to organize your favourite websites.
+            Open a new browser tab and see your sites load instantly. Try it for
+            free.
+          </p>
+
+          <div class="flex gap-5 justify-center pr-2 pl-2">
+            <button
+              class="pt-3 pb-3 pr-6 pl-6 bg-blue-600 text-white shadow-xl text-[16px] rounded-[6px] font-medium cursor-pointer hover:bg-white hover:text-blue-600 hover:border-2 hover:border-blue-600"
+            >
+              Get it on Chrome
+            </button>
+            <button
+              class="pt-3 pb-3 pr-6 pl-6 bg-gray-50 text-gray-600 shadow-xl text-[16px] rounded-[6px] font-medium cursor-pointer hover:bg-white hover:text-gray-600 hover:border-2 hover:border-gray-600"
+            >
+              Get it on Firefox
+            </button>
+          </div>
+        </div>
+      </main>
+      <div
+        class="w-[80vw] h-[65vh] rounded-l-[120px] bg-blue-600 absolute translate-x-[153px] translate-y-[-790px] overflow-hidden lg:hidden"
+        id="illustration-block1-mob"
+      ></div>
+    </header>
+
+    <section
+      class="flex gap-15 h-[fit-content] pb-20 flex-col w-[100vw] lg:w-[80vw]"
+    >
+      <div class="flex flex-col text-center gap-5">
+        <h2 class="font-semibold text-[2.2rem] text-blue-950">Features</h2>
+        <p
+          class="text-[18px] text-gray-500 font-normal pr-5 pl-5 lg:pr-80 lg:pl-80"
+        >
+          Our aim is to make it quick and easy for you to access your favourite
+          websites. Your bookmarks sync between your devices so you can access
+          them on the go.
+        </p>
+        <div
+          class="flex items-center w-[100vw] mt-10 flex-col lg:flex-row lg:w-[80vw] lg:justify-center"
+        >
+          <button
+            id="tab1"
+            class="text-[16px] text-gray-600 font-normal w-[230px] pb-8 border-b-2 border-gray-500 pr-10 pl-10 cursor-pointer aria-current:border-b-4 aria-current:border-red-400 aria-current:text-gray-900 hover:text-red-400 pt-8"
+            aria-current="true"
+          >
+            Simple Bookmarking
+          </button>
+          <button
+            id="tab2"
+            class="text-[16px] text-gray-600 font-normal w-[230px] pb-8 border-b-2 border-gray-500 pr-10 pl-10 cursor-pointer aria-current:border-b-4 aria-current:border-red-400 aria-current:text-gray-900 hover:text-red-400 pt-8"
+            aria-current="false"
+          >
+            Speedy Searching
+          </button>
+          <button
+            id="tab3"
+            class="text-[16px] text-gray-600 font-normal w-[230px] pb-8 border-b-2 border-gray-500 pr-10 pl-10 cursor-pointer aria-current:border-b-4 aria-current:border-red-400 aria-current:text-gray-900 hover:text-red-400 pt-8"
+            aria-current="false"
+          >
+            Easy Sharing
+          </button>
+        </div>
+      </div>
+      <!--Default Tab-->
+      <main
+        class="flex gap-20 items-center flex-col w-[100vw] lg:w-[80vw] lg:flex-row md:ml-10 ml-5"
+        id="bookmarkSlide"
+      >
+        <img
+          src="/images/illustration-features-tab-1.svg"
+          alt="Ilustration Features tab 1"
+          class="z-10 animate-(--img-animations)"
+        />
+        <div
+          class="mt-8 flex flex-col gap-5 items-center text-center lg:items-start lg:text-start lg:pl-10 lg:pt-15 lg:pr-20 animate-(--text-animations)"
+        >
+          <h2 class="font-semibold text-[2.2rem] text-blue-950">
+            Bookmark in one click
+          </h2>
+          <p class="text-[18px] text-gray-500 font-normal">
+            Organize your bookmarks however you like. Our simple drag-and-drop
+            interface gives you complete control over how you manage your
+            favourite sites.
+          </p>
+          <button
+            class="pt-3 pb-3 pr-6 pl-6 bg-blue-600 text-white shadow-xl text-[16px] rounded-[6px] font-medium cursor-pointer hover:bg-white hover:text-blue-600 hover:border-2 hover:border-blue-600"
+          >
+            More Info
+          </button>
+        </div>
+      </main>
+      <!--Tab2-->
+      <main
+        class="hidden gap-20 items-center flex-col w-[100vw] lg:w-[80vw] lg:flex-row md:ml-10 ml-5"
+        id="searchingSlide"
+      >
+        <img
+          src="images/illustration-features-tab-2.svg"
+          alt="Ilustration Features tab 2"
+          class="z-10 animate-(--img-animations)"
+        />
+        <div
+          class="mt-8 flex flex-col gap-5 items-center text-center lg:items-start lg:text-start lg:pl-10 lg:pt-15 lg:pr-15 animate-(--text-animations)"
+        >
+          <h2 class="font-semibold text-[2.2rem] text-blue-950">
+            Intelligent search
+          </h2>
+          <p class="text-[18px] text-gray-500 font-normal">
+            Our powerful search feature will help you find saved sites in no
+            time at all. No need to trawl through all of your bookmarks.
+          </p>
+          <button
+            class="pt-3 pb-3 pr-6 pl-6 bg-blue-600 text-white shadow-xl text-[16px] rounded-[6px] font-medium cursor-pointer hover:bg-white hover:text-blue-600 hover:border-2 hover:border-blue-600"
+          >
+            More Info
+          </button>
+        </div>
+      </main>
+      <!--Tab3-->
+      <main
+        class="hidden gap-20 items-center flex-col w-[100vw] lg:w-[80vw] lg:flex-row md:ml-10 ml-5"
+        id="shareSlide"
+      >
+        <img
+          src="images/illustration-features-tab-3.svg"
+          alt="Ilustration Features tab 3"
+          class="z-10 animate-(--img-animations)"
+        />
+        <div
+          class="mt-8 flex flex-col gap-5 items-center text-center lg:items-start lg:text-start lg:pl-18 lg:pt-15 lg:pr-20 animate-(--text-animations)"
+        >
+          <h2 class="font-semibold text-[2.2rem] text-blue-950">
+            Share your bookmarks
+          </h2>
+          <p class="text-[18px] text-gray-500 font-normal">
+            Easily share your bookmarks and collections with others. Create a
+            shareable link that you can send at the click of a button.
+          </p>
+          <button
+            class="pt-3 pb-3 pr-6 pl-6 bg-blue-600 text-white shadow-xl text-[16px] rounded-[6px] font-medium cursor-pointer hover:bg-white hover:text-blue-600 hover:border-2 hover:border-blue-600"
+          >
+            More Info
+          </button>
+        </div>
+      </main>
+      <div
+        class="w-[42vw] h-[43vh] rounded-r-[120px] bg-blue-600 absolute translate-x-[-150px] translate-y-[410px] overflow-hidden animate-(--img-animations)"
+        id="illustration-block2"
+      ></div>
+    </section>
+
+    <section
+      class="flex flex-col text-center gap-15 w-[100vw] lg:w-[70vw] h-[fit-content] pb-50"
+    >
+      <div class="flex flex-col gap-4" id="extensionsDiv">
+        <h2
+          class="font-semibold text-[1.8rem] pr-1 pl-1 lg:p-0 lg:text-[2.2rem] text-blue-950"
+        >
+          Download the extension
+        </h2>
+        <p
+          class="text-[15px] lg:text-[18px] text-gray-500 font-normal pr-0 pl-0 lg:pr-75 lg:pl-75"
+        >
+          We’ve got more browsers in the pipeline. Please do let us know if
+          you’ve got a favourite you’d like us to prioritize.
+        </p>
+      </div>
+
+      <main
+        class="flex gap-10 flex-col items-center lg:flex-row lg:justify-between"
+      >
+        <!--Chrome extension-->
+        <div
+          class="flex flex-col w-[80vw] lg:w-[22vw] items-center shadow-xl bg-gray-50 rounded-[12px] cursor-pointer"
+        >
+          <img
+            src="/images/logo-chrome.svg"
+            alt="Chrome Logo"
+            class="w-[40vw] md:w-[20vw] lg:w-[10vw] mt-10 mb-8"
+          />
+          <h3 class="text-blue-950 font-bold text-[22px]">Add to Chrome</h3>
+          <p class="text-[17px] mb-8 text-gray-500 font-normal">
+            Minimum version 62
+          </p>
+          <img src="/images/bg-dots.svg" alt="division dots image" />
+          <button
+            class="mt-5 bg-blue-600 pt-3 pb-3 pr-10 pl-10 text-white text-[17px] shadow-xl mb-7 rounded-[5px] hover:bg-white hover:text-blue-600 hover:border-2 hover:border-blue-600 cursor-pointer"
+          >
+            Add & Install Extension
+          </button>
+        </div>
+
+        <!--Firefox extension-->
+        <div
+          class="flex flex-col w-[80vw] lg:w-[22vw] items-center shadow-xl bg-gray-50 rounded-[12px] translate-y-[45px] cursor-pointer"
+        >
+          <img
+            src="/images/logo-firefox.svg"
+            alt="Firefox Logo"
+            class="w-[40vw] md:w-[20vw] lg:w-[10vw] mt-10 mb-8"
+          />
+          <h3 class="text-blue-950 font-bold text-[22px]">Add to Firefox</h3>
+          <p class="text-[17px] mb-8 text-gray-500 font-normal">
+            Minimum version 55
+          </p>
+          <img src="/images/bg-dots.svg" alt="division dots image" />
+          <button
+            class="mt-5 bg-blue-600 pt-3 pb-3 pr-10 pl-10 text-white text-[17px] shadow-xl mb-7 rounded-[5px] hover:bg-white hover:text-blue-600 hover:border-2 hover:border-blue-600 cursor-pointer"
+          >
+            Add & Install Extension
+          </button>
+        </div>
+
+        <!--Opera extension-->
+        <div
+          class="flex flex-col w-[80vw] lg:w-[22vw] items-center shadow-xl bg-gray-50 rounded-[12px] translate-y-[90px] cursor-pointer"
+        >
+          <img
+            src="/images/logo-opera.svg"
+            alt="Opera Logo"
+            class="w-[40vw] md:w-[20vw] lg:w-[10vw] mt-10 mb-5"
+          />
+          <h3 class="text-blue-950 font-bold text-[22px]">Add to Opera</h3>
+          <p class="text-[17px] mb-8 text-gray-500 font-normal">
+            Minimum version 46
+          </p>
+          <img src="/images/bg-dots.svg" alt="division dots image" />
+          <button
+            class="mt-5 bg-blue-600 pt-3 pb-3 pr-10 pl-10 text-white text-[17px] shadow-xl mb-7 rounded-[5px] hover:bg-white hover:text-blue-600 hover:border-2 hover:border-blue-600 cursor-pointer"
+          >
+            Add & Install Extension
+          </button>
+        </div>
+      </main>
+    </section>
+
+    <section
+      class="flex flex-col gap-12 w-[100vw] lg:w-[40vw] items-center h-[fit-content] pb-30"
+    >
+      <div class="flex flex-col gap-3 text-center">
+        <h2 class="text-blue-950 font-semibold text-[2rem] lg:text-[2.2rem]">
+          Frequently Asked Questions
+        </h2>
+        <p
+          class="text-[16px] lg:text-[20px] text-gray-500 font-normal pr-5 pl-5"
+        >
+          Here are some of our FAQs. If you have any other questions you’d like
+          answered please feel free to email us.
+        </p>
+      </div>
+
+      <main class="flex flex-col w-[80vw] lg:w-[42vw]">
+        <!--Question 1-->
+        <div
+          class="flex justify-between pr-5 border-t-1 border-b-1 border-gray-400 pt-4 pb-4 align-middle cursor-pointer"
+          id="divquest1"
+        >
+          <p
+            class="text-[13px] md:text-[20px] lg:text-[20px] text-blue-950 font-normal hover:text-red-400"
+          >
+            What is Bookmark?
+          </p>
+          <button
+            id="question1-btn"
+            class="w-[fit-content] h-[fit-content] mt-[8px] animate-(--spin-close-answer) cursor-pointer"
+          >
+            <img
+              src="/images/icon-arrow.svg"
+              alt="the arrow icon for show the question answer button"
+            />
+          </button>
+          <button
+            class="hidden w-[fit-content] h-[fit-content] mt-[8px] cursor-pointer"
+            id="close1"
+          >
+            <img
+              src="/images/icon-arrow.svg"
+              alt="the arrow icon for close the question answer button"
+              class="animate-(--spin-button) rotate-180"
+            />
+          </button>
+        </div>
+        <div
+          class="pt-5 pb-5 border-b-1 border-gray-400 animate-(--slide-answers) hidden"
+          id="answer1"
+        >
+          <p
+            class="text-[14px] md:text-[19px] lg:text-[19px] text-gray-500 font-normal leading-9"
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+            tincidunt justo eget ultricies fringilla. Phasellus blandit ipsum
+            quis quam ornare mattis.
+          </p>
+        </div>
+
+        <!--Question 2-->
+        <div
+          class="flex justify-between pr-5 border-b-1 border-gray-400 pt-4 pb-4 align-middle cursor-pointer"
+          id="divquest2"
+        >
+          <p
+            class="text-[13px] md:text-[20px] lg:text-[20px] text-blue-950 font-normal hover:text-red-400"
+          >
+            How can I request a new browser?
+          </p>
+          <button
+            id="question2-btn"
+            class="w-[fit-content] h-[fit-content] mt-[8px] animate-(--spin-close-answer) cursor-pointer"
+          >
+            <img
+              src="/images/icon-arrow.svg"
+              alt="the arrow icon for show the question answer button"
+            />
+          </button>
+          <button
+            class="hidden w-[fit-content] h-[fit-content] mt-[8px] cursor-pointer"
+            id="close2"
+          >
+            <img
+              src="/images/icon-arrow.svg"
+              alt="the arrow icon for close the question answer button"
+              class="animate-(--spin-button) rotate-180"
+            />
+          </button>
+        </div>
+        <div
+          class="pt-5 pb-5 border-b-1 border-gray-400 hidden animate-(--slide-answers)"
+          id="answer2"
+        >
+          <p
+            class="text-[14px] md:text-[19px] lg:text-[19px] text-gray-500 font-normal leading-9"
+          >
+            Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa,
+            ultricies non ligula. Suspendisse imperdiet. Vivamus luctus eros
+            aliquet convallis ultricies. Mauris augue massa, ultricies non
+            ligula. Suspendisse imperdie tVivamus luctus eros aliquet convallis
+            ultricies. Mauris augue massa, ultricies non ligula. Suspendisse
+            imperdiet.
+          </p>
+        </div>
+
+        <!--Question 3-->
+        <div
+          class="flex justify-between pr-5 border-b-1 border-gray-400 pt-4 pb-4 align-middle cursor-pointer"
+          id="divquest3"
+        >
+          <p
+            class="text-[13px] md:text-[20px] lg:text-[20px] text-blue-950 font-normal hover:text-red-400"
+          >
+            Is there a mobile app?
+          </p>
+          <button
+            id="question3-btn"
+            class="w-[fit-content] h-[fit-content] mt-[8px] animate-(--spin-close-answer) cursor-pointer"
+          >
+            <img
+              src="/images/icon-arrow.svg"
+              alt="the arrow icon for show the question answer button"
+            />
+          </button>
+          <button
+            class="hidden w-[fit-content] h-[fit-content] mt-[8px] cursor-pointer"
+            id="close3"
+          >
+            <img
+              src="/images/icon-arrow.svg"
+              alt="the arrow icon for close the question answer button"
+              class="animate-(--spin-button) rotate-180"
+            />
+          </button>
+        </div>
+        <div
+          class="pt-5 pb-5 border-b-1 border-gray-400 hidden animate-(--slide-answers)"
+          id="answer3"
+        >
+          <p
+            class="text-[14px] md:text-[19px] lg:text-[19px] text-gray-500 font-normal leading-9"
+          >
+            Sed consectetur quam id neque fermentum accumsan. Praesent luctus
+            vestibulum dolor, ut condimentum urna vulputate eget. Cras in ligula
+            quis est pharetra mattis sit amet pharetra purus. Sed sollicitudin
+            ex et ultricies bibendum.
+          </p>
+        </div>
+
+        <!--Question 4-->
+        <div
+          class="flex justify-between pr-5 border-b-1 border-gray-400 pt-4 pb-4 align-middle cursor-pointer"
+          id="divquest4"
+        >
+          <p
+            class="text-[13px] md:text-[20px] lg:text-[20px] text-blue-950 font-normal hover:text-red-400"
+          >
+            What about other Chromium browsers?
+          </p>
+          <button
+            id="question4-btn"
+            class="w-[fit-content] h-[fit-content] mt-[8px] animate-(--spin-close-answer) cursor-pointer"
+          >
+            <img
+              src="/images/icon-arrow.svg"
+              alt="the arrow icon for show the question answer button"
+            />
+          </button>
+          <button
+            class="hidden w-[fit-content] h-[fit-content] mt-[8px] cursor-pointer"
+            id="close4"
+          >
+            <img
+              src="/images/icon-arrow.svg"
+              alt="the arrow icon for close the question answer button"
+              class="animate-(--spin-button) rotate-180"
+            />
+          </button>
+        </div>
+        <div
+          class="pt-5 pb-5 border-b-1 border-gray-400 hidden animate-(--slide-answers)"
+          id="answer4"
+        >
+          <p
+            class="text-[14px] md:text-[19px] lg:text-[19px] text-gray-500 font-normal leading-9"
+          >
+            Integer condimentum ipsum id imperdiet finibus. Vivamus in placerat
+            mi, at euismod dui. Aliquam vitae neque eget nisl gravida
+            pellentesque non ut velit.
+          </p>
+        </div>
+      </main>
+
+      <button
+        class="pt-3 pb-3 pr-6 pl-6 bg-blue-600 text-white text-[18px] font-medium rounded-[5px] hover:bg-white hover:text-blue-600 hover:border-2 hover:border-blue-600"
+      >
+        More Info
+      </button>
+    </section>
+
+    <footer
+      class="flex flex-col w-[100vw] bg-blue-600 h-[fit-content] items-center"
+    >
+      <p
+        class="text-white text-[12px] md:text-[15px] lg:text-[15px] font-medium uppercase mt-12 tracking-[5px]"
+      >
+        35,000+ already joined
+      </p>
+      <h2
+        class="text-white text-[1.6rem] md:text-[2.2rem] lg:text-[2.2rem] font-medium text-center mt-2 md:mt-7 lg:mt-7 leading-[2rem] md:leading-[3rem] lg:leading-[3rem] mb-10 md:mb-6 lg:mb-6"
+      >
+        Stay up-to-date with what<br />we’re doing
+      </h2>
+
+      <form
+        class="flex gap-7 md:gap-4 lg:gap-4 mb-15 flex-col md:flex-row lg:flex-row"
+        id="form"
+      >
+        <input
+          type="email"
+          aria-label="Enter your email address"
+          placeholder="Enter your email address"
+          class="bg-white text-gray-500 pt-3 pb-3 w-[80vw] md:w-[330px] lg:w-[330px] pl-4 text-[17px] rounded-[5px] cursor-pointer aria-invalid:border-3 aria-invalid:border-red-400 focus:outline-3 focus:outline-red-400"
+          aria-invalid="false"
+          id="emailInput"
+          autocomplete="email"
+        />
+        <img
+          src="/images/icon-error.svg"
+          alt="Error message icon for invalid email or empty input"
+          class="absolute translate-x-[295px] translate-y-[17px] hidden"
+          id="errorIcon"
+        />
+        <button
+          class="bg-red-400 text-black text-[18px] pt-3 pb-3 pr-6 pl-6 rounded-[5px] cursor-pointer hover:border-2 hover:border-red-400 hover:bg-white hover:text-red-400"
+        >
+          Contact Us
+        </button>
+      </form>
+      <div
+        class="bg-red-400 w-[329.5px] mr-36.5 rounded-br-[5px] rounded-bl-[5px] translate-y-[-63px] translate-x-[-2.5px] hidden"
+        id="errorText"
+      >
+        <p class="pr-2 pb-1 pl-3 text-[14.5px] text-white">
+          Whoops, make sure it's an email
+        </p>
+      </div>
+
+      <div
+        class="flex bg-blue-950 w-[100vw] pt-10 pb-5 h-[fit-content] lg:pt-0 lg:pb-0 lg:h-[80px] flex-col lg:flex-row lg:justify-between lg:pr-40 lg:pl-40 items-center text-center"
+      >
+        <div class="flex gap-4 lg:gap-10 flex-col lg:flex-row">
+          <img
+            src="/images/logo-bookmark.svg"
+            alt="Bookmark Site Logo"
+            class="w-[100%]"
+          />
+          <p
+            class="text-white uppercase text-[18px] absolute translate-x-[36px] tracking-[2px]"
+          >
+            Bookmark
+          </p>
+          <a
+            href="#"
+            class="cursor-pointer text-white text-[13px] uppercase tracking-[2px] hover:text-red-400 pt-1 mt-5 lg:mt-0"
+            >Features</a
+          >
+          <a
+            href="#"
+            class="cursor-pointer text-white text-[13px] uppercase tracking-[2px] hover:text-red-400 pt-1"
+            >Pricing</a
+          >
+          <a
+            href="#"
+            class="cursor-pointer text-white text-[13px] uppercase tracking-[2px] hover:text-red-400 pt-1 mb-10 lg:mb-0"
+            >Contact</a
+          >
+        </div>
+        <div class="flex gap-10">
+          <a
+            href="#"
+            class="cursor-pointer pb-2 hover:border-b-4 hover:border-red-400"
+          >
+            <img
+              src="/images/icon-facebook.svg"
+              alt="Facebook Logo to go to our facebook page"
+            />
+          </a>
+          <a
+            href="#"
+            class="cursor-pointer pb-2 hover:border-b-4 hover:border-red-400"
+          >
+            <img
+              src="/images/icon-twitter.svg"
+              alt="Twitter Logo to go to our twitter page"
+            />
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

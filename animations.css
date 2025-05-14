@@ -1,0 +1,174 @@
+/*This file is for the animations and media queries*/
+
+/*Animations*/
+:root {
+  --text-animations: clearImg 1.5s linear;
+  --img-animations: slideImgs 1.5s linear;
+  --extensions-animations: hoverExtensions 1.7s linear infinite;
+  --slide-answers: showAnswer 1s ease-in-out;
+  --spin-button: spinBtn 0.5s linear;
+  --spin-close-answer: spinBtnClose 0.5s linear;
+}
+
+@keyframes clearImg {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideImgs {
+  0% {
+    opacity: 0;
+    transform: translate(-200px, 0px);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: translate(-100px, 0px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes hoverExtensions {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  50% {
+    transform: translate(0px, -30px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes showAnswer {
+  0% {
+    transform: translate(0px, -50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0px, 0px);
+    opacity: 1;
+  }
+}
+
+@keyframes spinBtn {
+  0% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes spinBtnClose {
+  0% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/*Media Queries*/
+@media (min-width: 2040px) {
+  #illustration-block1 {
+    width: 635px;
+    height: 350px;
+    transform: translate(920px, -20px);
+  }
+  #illustration-block2 {
+    width: 720px;
+    height: 350px;
+    transform: translate(-200px, -30px);
+  }
+}
+
+@media (max-width: 1024px) {
+  body {
+    width: 100vw;
+    height: fit-content;
+  }
+  #illustration-block1 {
+    display: none;
+  }
+  #illustration-block2 {
+    display: none;
+  }
+  header {
+    & main {
+      & div {
+        margin-top: 0px;
+      }
+
+      & img {
+        margin-top: 40px;
+      }
+    }
+  }
+
+  #bookmarkSlide {
+    width: 90vw;
+    gap: 5px;
+  }
+  #searchingSlide {
+    width: 90vw;
+    gap: 5px;
+  }
+  #shareSlide {
+    width: 90vw;
+    gap: 5px;
+  }
+  #extensionsDiv {
+    & p {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+  }
+}
+
+@media (max-width: 426px) {
+  #illustration-block1-mob {
+    width: 330px;
+    height: 220px;
+    transform: translate(-58px, 80px);
+  }
+  #errorText {
+    width: 80vw;
+    transform: translate(75px, -78px);
+  }
+}
+
+@media (max-width: 376px) {
+  #illustration-block1-mob {
+    width: 310px;
+    height: 210px;
+    transform: translate(-88px, 80px);
+  }
+  #errorIcon {
+    transform: translate(-30px, 0px);
+  }
+}
+
+@media (max-width: 321px) {
+  #illustration-block1-mob {
+    width: 260px;
+    height: 160px;
+    transform: translate(-94px, 20px);
+  }
+  #errorIcon {
+    transform: translate(-72px, 0px);
+  }
+}
